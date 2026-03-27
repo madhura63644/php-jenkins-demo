@@ -12,4 +12,16 @@ pipeline {
       }
     }
   }
+  post {
+    success {
+      mail to: 'madhura63644@gmail.com',
+        subject: 'Jenkins Build Success',
+        body: 'Deployment Successfully'
+    }
+    failure {
+      mail to: 'madhura63644@gmail.com',
+        subject: 'Jenkins Build Failed',
+        body: 'Deployment Failed'
+    }
+  }             
 }
